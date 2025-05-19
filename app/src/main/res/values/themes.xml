@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.StockDash" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/brand_primary_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/brand_primary_light_blue</item>
+        <item name="colorOnPrimaryContainer">@color/brand_primary_dark_blue</item>
+
+        <item name="colorSecondary">@color/brand_accent_teal</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/brand_accent_light_teal</item>
+        <item name="colorOnSecondaryContainer">@color/brand_accent_teal</item>
+
+        <!-- Surface and Background colors -->
+        <item name="android:colorBackground">@color/light_background</item>
+        <item name="colorSurface">@color/light_surface_layer1</item>
+        <item name="colorOnSurface">@color/light_text_primary</item>
+        <item name="colorOnBackground">@color/light_text_primary</item>
+        <item name="colorError">@color/functional_red_negative</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/light_text_primary</item>
+        <item name="android:textColorSecondary">@color/light_text_secondary</item>
+        <item name="android:divider">@color/light_divider</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" >true</item>
+
+
+        <!-- Custom Attributes -->
+        <item name="cardBackgroundColorLayer1">@color/light_surface_layer1</item>
+        <item name="cardBackgroundColorLayer2">@color/light_surface_layer2</item>
+        <item name="cardBackgroundColorLayer3">@color/light_surface_layer3</item>
+        <item name="stockPriceUpColor">@color/functional_green_positive</item>
+        <item name="stockPriceDownColor">@color/functional_red_negative</item>
+        <item name="toolbarTextColor">@color/light_text_primary</item>
+        <item name="rangeIndicatorBarColor">@color/light_divider</item>
+        <item name="rangeIndicatorCurrentPriceColor">@color/brand_primary_blue</item>
+        <item name="filterChipSelectedBackgroundColor">@color/brand_primary_blue</item>
+        <item name="filterChipUnselectedBackgroundColor">@color/light_surface_layer1</item> <!-- Or a light grey -->
+        <item name="filterChipSelectedTextColor">@color/white</item>
+        <item name="filterChipUnselectedTextColor">@color/light_text_primary</item>
+        <item name="BlackOnLight">@color/black</item>
+        <item name="WhiteOnLight">@color/white</item>
+        <item name="textPrimary">@color/light_text_primary</item>
+        <item name="textSecondary">@color/light_text_secondary</item>
+        <item name="darkCardColor">#BBBBBB</item>
+        <item name="crossColor">#BBBBBB</item>
+
+        <!-- Font family -->
+        <item name="fontFamily" parent="">@font/dfont</item>
+    </style>
+
+    <style name="Theme.StockDash" parent="Base.Theme.StockDash" />
+</resources>

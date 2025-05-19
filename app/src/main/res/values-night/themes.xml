@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.StockDash" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/brand_primary_light_blue</item> <!-- Lighter primary for dark -->
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimaryContainer">@color/brand_primary_dark_blue</item>
+        <item name="colorOnPrimaryContainer">@color/brand_primary_light_blue</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/brand_accent_light_teal</item> <!-- Lighter secondary for dark -->
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondaryContainer">#003730</item> <!-- Darker teal -->
+        <item name="colorOnSecondaryContainer">@color/brand_accent_light_teal</item>
+
+        <!-- Surface and Background colors -->
+        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="colorSurface">@color/dark_surface_layer1</item>
+        <item name="colorOnSurface">@color/dark_text_primary</item>
+        <item name="colorOnBackground">@color/dark_text_primary</item>
+        <item name="colorError">@color/functional_red_negative_dark_contrast</item>
+        <item name="colorOnError">@color/black</item>
+
+        <!-- For text appearances -->
+        <item name="android:textColorPrimary">@color/dark_text_primary</item>
+        <item name="android:textColorSecondary">@color/dark_text_secondary</item>
+        <item name="android:divider">@color/dark_divider</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" >false</item> <!-- Dark status bar = light icons -->
+
+        <!-- Custom Attributes -->
+        <item name="cardBackgroundColorLayer1">@color/dark_surface_layer1</item>
+        <item name="cardBackgroundColorLayer2">@color/dark_surface_layer2</item>
+        <item name="cardBackgroundColorLayer3">@color/dark_surface_layer3</item>
+        <item name="stockPriceUpColor">@color/functional_green_positive_dark_contrast</item>
+        <item name="stockPriceDownColor">@color/functional_red_negative_dark_contrast</item>
+        <item name="toolbarTextColor">@color/dark_text_primary</item>
+        <item name="rangeIndicatorBarColor">@color/dark_divider</item>
+        <item name="rangeIndicatorCurrentPriceColor">@color/brand_primary_light_blue</item>
+        <item name="filterChipSelectedBackgroundColor">@color/brand_primary_light_blue</item>
+        <item name="filterChipUnselectedBackgroundColor">@color/dark_surface_layer1</item>
+        <item name="filterChipSelectedTextColor">@color/black</item>
+        <item name="filterChipUnselectedTextColor">@color/dark_text_primary</item>
+        <item name="BlackOnLight">@color/white</item>
+        <item name="WhiteOnLight">@color/black</item>
+        <item name="textPrimary">@color/dark_text_primary</item>
+        <item name="textSecondary">@color/dark_text_secondary</item>
+        <item name="darkCardColor">@color/dark_surface_layer1</item>
+        <item name="crossColor">@color/dark_surface_layer1</item>
+
+        <!-- Font family -->
+        <item name="fontFamily" parent="">@font/dfont</item>
+    </style>
+</resources>

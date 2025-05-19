@@ -1,0 +1,20 @@
+<resources>
+    <attr name="darkCardColor" format="color" />
+    <attr name="BlackOnLight" format="color" />"
+    <attr name="WhiteOnLight" format="color" />
+    <attr name="textPrimary" format="color" />"
+    <attr name="textSecondary" format="color" />
+    <attr name="cardBackgroundColorLayer1" format="color" />
+    <attr name="cardBackgroundColorLayer2" format="color" />
+    <attr name="cardBackgroundColorLayer3" format="color" />
+    <attr name="crossColor" format="color" />
+    <attr name="stockPriceUpColor" format="color" />
+    <attr name="stockPriceDownColor" format="color" />
+    <attr name="toolbarTextColor" format="color" />
+    <attr name="rangeIndicatorBarColor" format="color" />
+    <attr name="rangeIndicatorCurrentPriceColor" format="color" />
+    <attr name="filterChipSelectedBackgroundColor" format="color" />
+    <attr name="filterChipUnselectedBackgroundColor" format="color" />
+    <attr name="filterChipSelectedTextColor" format="color" />
+    <attr name="filterChipUnselectedTextColor" format="color" />
+</resources>

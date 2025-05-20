@@ -49,6 +49,6 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideStockDetailDao(appDatabase: AppDatabase): StockDetailDao {
-        return appDatabase.stockDetailDao() // Get it from your AppDatabase instance
+        return appDatabase.stockDetailDao() // Provide new DAO
     }
 }

@@ -59,7 +59,6 @@ StockDash is a Kotlin-based Android app that provides a clean interface for expl
 
 ![Alt Text](screenshots/image1.jpg)
 ![Alt Text](screenshots/image2.jpg)
-![Alt Text](screenshots/image3.jpg)
 ![Alt Text](screenshots/image4.jpg)
 
 

@@ -18,7 +18,6 @@ import com.example.stockdash.data.network.AlphaVantageApiService
 import com.example.stockdash.data.network.dto.TimeSeries15MinDto
 import com.example.stockdash.data.network.dto.TimeSeriesMonthlyDto
 import com.example.stockdash.util.Resource
-import com.example.stockdash.util.Constants.ALPHA_VANTAGE_API_KEY
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -59,7 +58,7 @@ class StockRepositoryImpl @Inject constructor(
 
             // Call the generic handler
             val result = safeApiCall(
-                apiCall = { apiService.getCompanyOverview(symbol, ALPHA_VANTAGE_API_KEY) },
+                apiCall = { apiService.getCompanyOverview(symbol) },
                 mapToDomain = { companyOverviewDto -> companyOverviewDto.toStockDetail() }
             )
             when (result) {
@@ -107,7 +106,7 @@ class StockRepositoryImpl @Inject constructor(
 
             // Call the generic handler
             val result = safeApiCall(
-                apiCall = { apiService.getTopMovers(ALPHA_VANTAGE_API_KEY) },
+                apiCall = { apiService.getTopMovers() },
                 mapToDomain = { topMoversDto ->  topMoversDto.toExploreScreenData() }
             )
             when (result) {
@@ -157,23 +156,23 @@ class StockRepositoryImpl @Inject constructor(
 
             val result = when (interval) {
                 "1D" -> safeApiCall(
-                    apiCall = { apiService.getTimeSeries15Min(symbol , ALPHA_VANTAGE_API_KEY) },
+                    apiCall = { apiService.getTimeSeries15Min(symbol ) },
                     mapToDomain = { timeSeriesEntryDto -> timeSeriesEntryDto.toTimeSeriesData() },
                 )
                 "1W" -> safeApiCall(
-                    apiCall = { apiService.getTimeSeries60Min(symbol , ALPHA_VANTAGE_API_KEY) },
+                    apiCall = { apiService.getTimeSeries60Min(symbol ) },
                     mapToDomain = { timeSeriesEntryDto -> timeSeriesEntryDto.toTimeSeriesData() },
                 )
                 "1M" -> safeApiCall(
-                    apiCall = { apiService.getTimeSeriesDaily(symbol, ALPHA_VANTAGE_API_KEY) },
+                    apiCall = { apiService.getTimeSeriesDaily(symbol) },
                     mapToDomain = { timeSeriesEntryDto -> timeSeriesEntryDto.toTimeSeriesData() },
                 )
                 "3M", "1Y" -> safeApiCall(
-                    apiCall = { apiService.getTimeSeriesWeekly(symbol, ALPHA_VANTAGE_API_KEY) },
+                    apiCall = { apiService.getTimeSeriesWeekly(symbol) },
                     mapToDomain = { timeSeriesEntryDto -> timeSeriesEntryDto.toTimeSeriesData() },
                 )
                 "5Y" -> safeApiCall(
-                    apiCall = { apiService.getTimeSeriesMonthly(symbol, ALPHA_VANTAGE_API_KEY) },
+                    apiCall = { apiService.getTimeSeriesMonthly(symbol) },
                     mapToDomain = { timeSeriesEntryDto -> timeSeriesEntryDto.toTimeSeriesData() },
                 )
                 else -> Resource.Error("Invalid interval")
@@ -204,7 +203,7 @@ class StockRepositoryImpl @Inject constructor(
             emit(Resource.Loading())
 
             val result = safeApiCall(
-                apiCall = { apiService.searchStock(query, ALPHA_VANTAGE_API_KEY) },
+                apiCall = { apiService.searchStock(query) },
                 mapToDomain = { searchResultDto -> searchResultDto.toSearchStockInfo(type) },
             )
             emit(result)

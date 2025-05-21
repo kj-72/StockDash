@@ -2,8 +2,8 @@ package com.example.stockdash.data.model
 
 import com.squareup.moshi.JsonClass
 
-@JsonClass(generateAdapter = true) // Helps Moshi with Kotlin classes
+@JsonClass(generateAdapter = true) // Enables Moshi to convert to JSON and back
 data class ChartDataPoint(
-    val date: String, // Or Long if you convert to timestamp before serialization
+    val date: String,
     val price: Float
 )

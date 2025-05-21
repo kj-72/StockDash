@@ -3,6 +3,7 @@ package com.example.stockdash.data.network.dto
 import com.example.stockdash.data.model.StockDetail
 import com.squareup.moshi.Json
 
+// Or @JsonClass(generateAdapter = true) if variable Name matches JSON key
 data class CompanyOverviewDto(
     @Json(name = "Symbol") val symbol: String?,
     @Json(name = "AssetType") val assetType: String?,

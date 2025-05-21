@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -19,6 +21,17 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+
+
+        val localProperties = Properties().apply {
+            val localFile = rootProject.file("local.properties")
+            if (localFile.exists()) {
+                load(localFile.inputStream())
+            }
+        }
+        val apiKey = localProperties.getProperty("ALPHA_VANTAGE_API_KEY") ?: "demo"
+        buildConfigField("String", "ALPHA_VANTAGE_API_KEY", "\"$apiKey\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -34,6 +47,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     compileOptions {

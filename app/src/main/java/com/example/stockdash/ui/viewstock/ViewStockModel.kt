@@ -21,7 +21,7 @@ class ViewStockModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle // For navigation arguments
 ) : ViewModel() {
 
-    // Assuming "symbolArg" is the name of the argument in your nav_graph.xml
+    // Assuming "symbolArg" is the name of the argument
     private val stockSymbol =
         MutableStateFlow(savedStateHandle.get<String>(ViewStockFragment.Companion.ARG_SYMBOL))
     private var interval = "1D"

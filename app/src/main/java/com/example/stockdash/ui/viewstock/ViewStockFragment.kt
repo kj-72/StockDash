@@ -331,7 +331,8 @@ class ViewStockFragment : Fragment() {
 
     private fun formatNumber(number: String?): String {
         return when {
-            number == null -> ""
+            number == null -> "None"
+            number == "None" -> "None"
             number.length >= 12 -> String.Companion.format(Locale.getDefault(), "%.1fT$", number.toDouble() / 1_000_000_000_000.0)
             number.length >= 9 -> String.Companion.format(Locale.getDefault(), "%.1fB$", number.toDouble() / 1_000_000_000.0)
             number.length >= 6 -> String.Companion.format(Locale.getDefault(), "%.1fM$", number.toDouble() / 1_000_000.0)

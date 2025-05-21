@@ -11,11 +11,8 @@ import com.example.stockdash.data.local.entity.CachedExploreDataEntity
 import com.example.stockdash.data.local.entity.CachedStockDetailEntity
 import com.example.stockdash.data.local.entity.RecentSearchEntity
 
-@Database(entities = [
-    RecentSearchEntity::class,
-    CachedExploreDataEntity::class,
-    CachedChartDataEntity::class,
-    CachedStockDetailEntity::class],
+@Database(
+    entities = [RecentSearchEntity::class, CachedExploreDataEntity::class, CachedChartDataEntity::class, CachedStockDetailEntity::class],
     version = 1,
     exportSchema = false
 )

@@ -7,8 +7,7 @@ import com.squareup.moshi.Types
 data class TimeSeriesData(val data: List<ChartDataPoint>) {
 
     fun toCacheEntity(symbol: String, intervalRange: String, fetchDate: String, moshi: Moshi): CachedChartDataEntity {
-        val chartDataPointType = Types.newParameterizedType(ChartDataPoint::class.java, String::class.java, Float::class.javaObjectType)
-        val listType = Types.newParameterizedType(List::class.java, chartDataPointType)
+        val listType = Types.newParameterizedType(List::class.java, ChartDataPoint::class.java)
         val adapter = moshi.adapter<List<ChartDataPoint>>(listType)
         return CachedChartDataEntity(
             symbol = symbol,

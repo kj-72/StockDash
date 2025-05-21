@@ -53,7 +53,7 @@ class StockRepositoryImpl @Inject constructor(
             }
             if (cachedEntity != null) {
                 Log.d("StockRepository", "Serving StockDetail for $cleanSymbol from cache for date: $todayDateString")
-                emit(Resource.Success(cachedEntity.toStockDetail())) // Moshi not needed if entity fields match domain
+                emit(Resource.Success(cachedEntity.toStockDetail()))
                 return@flow
             }
 

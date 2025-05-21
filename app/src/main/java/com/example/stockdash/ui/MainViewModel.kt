@@ -98,9 +98,6 @@ class MainViewModel @Inject constructor(private val stockRepository: StockReposi
         }
     }
 
-    private fun postFilteredResults() {
-        _searchResults.value = Resource.Success(applyFilterToSearchResults(rawSearchResults, _currentSearchResultFilter.value))
-    }
 
     private fun applyFilterToSearchResults(list: List<SearchStockInfo>, filter: String): List<SearchStockInfo> {
         if (filter == "All") {

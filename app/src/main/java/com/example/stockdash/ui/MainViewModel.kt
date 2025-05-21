@@ -140,7 +140,7 @@ class MainViewModel @Inject constructor(private val stockRepository: StockReposi
                     is Resource.Loading -> _searchResults.value = Resource.Loading()
                     is Resource.Success -> {
                         rawSearchResults = result.data ?: emptyList()
-                        postFilteredResults()
+                        _searchResults.value = Resource.Success(applyFilterToSearchResults(rawSearchResults, _currentSearchResultFilter.value))
                         _showSearchFragment.value = !result.data.isNullOrEmpty()
                     }
                     is Resource.Error -> {

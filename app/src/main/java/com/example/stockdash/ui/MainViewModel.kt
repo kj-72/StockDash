@@ -98,9 +98,6 @@ class MainViewModel @Inject constructor(private val stockRepository: StockReposi
         }
     }
 
-    private fun postFilteredResults() {
-        _searchResults.value = Resource.Success(applyFilterToSearchResults(rawSearchResults, _currentSearchResultFilter.value))
-    }
 
     private fun applyFilterToSearchResults(list: List<SearchStockInfo>, filter: String): List<SearchStockInfo> {
         if (filter == "All") {
@@ -139,8 +136,8 @@ class MainViewModel @Inject constructor(private val stockRepository: StockReposi
                 when (result) {
                     is Resource.Loading -> _searchResults.value = Resource.Loading()
                     is Resource.Success -> {
-                        _searchResults.value = Resource.Success(result.data ?: emptyList())
-                        postFilteredResults()
+                        rawSearchResults = result.data ?: emptyList()
+                        _searchResults.value = Resource.Success(applyFilterToSearchResults(rawSearchResults, _currentSearchResultFilter.value))
                         _showSearchFragment.value = !result.data.isNullOrEmpty()
                     }
                     is Resource.Error -> {

@@ -1,8 +1,10 @@
 package com.example.stockdash.data.local.entity
 
 import androidx.room.Entity
+import com.example.stockdash.data.model.ChartDataPoint
 import com.example.stockdash.data.model.TimeSeriesData
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
 
 // Composite Primary Key: symbol, interval (representing the UI range like "1D"), and fetchDate
 @Entity(tableName = "cached_chart_data", primaryKeys = ["symbol", "intervalRange", "fetchDate"])
@@ -14,7 +16,8 @@ data class CachedChartDataEntity(
 ) {
     // Mapper to domain model
     fun toTimeSeriesData(moshi: Moshi): TimeSeriesData {
-        val adapter = moshi.adapter<TimeSeriesData>(TimeSeriesData::class.java)
-        return adapter.fromJson(chartDataJson)?: TimeSeriesData(emptyList())
+        val listType = Types.newParameterizedType(List::class.java, ChartDataPoint::class.java)
+        val adapter = moshi.adapter<List<ChartDataPoint>>(listType)
+        return TimeSeriesData(data = adapter.fromJson(chartDataJson) ?: emptyList())
     }
 }
